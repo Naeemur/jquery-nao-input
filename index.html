@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jQuery Nao Input</title>
+	<link rel="stylesheet" href="aicon/style.css">
+	<link rel="stylesheet" href="css/4grid.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/jquery-pseudo-ripple.css">
+	<link rel="stylesheet" href="css/jquery-nao-calendar.css">
+	<link rel="stylesheet" href="css/jquery-nao-input.css">
+	<!-- <link rel="stylesheet" href="css/"> -->
+	<style>
+	.con {
+		background: #eaeaea;
+		text-align: justify;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	h2.con {
+		box-sizing: border-box;
+		background: none;
+		text-align: left;
+		padding: 20px;
+		color: #0af;
+	}
+	</style>
+</head>
+<body style="background-color:#eee;padding:50px 0px;font:16px sans-serif;">
+	<h1 style="text-align:center;">jQuery Nao Input</h1>
+	<div style="text-align:justify;" class="con row sml-1 mid-1 lrg-4">
+		<div class="col sml-1 mid-1 lrg-2">
+			<h3>Intro</h3>
+			<p>Advanced Input plugin for jQuery web applications.</p>
+			<p>This plugin has a few dependencies, so it is recommended to use if you are already using those dependencies in your project.</p>
+			<p>Examples are given below with code snippets.</p>
+		</div>
+		<div class="col sml-1 mid-1 lrg-2">
+			<h3>Dependencies</h3>
+			<ul>
+				<li>jQuery</li>
+				<li>jQuery UI (slider widget only)</li>
+				<li>jQuery mCustomScrollbar</li>
+				<li>jQuery Nao Calendar (by me)</li>
+				<li>jQuery Pseudo Ripple (by me)</li>
+				<li>Aicon icon set (by me)</li>
+			</ul>
+		</div>
+	</div>
+	<div class="con row sml-1 mid-1 lrg-4">
+		<div class="col sml-1 mid-1 lrg-2">
+			<h2>Input elements</h2>
+			<pre><code>
+// HTML
+&lt;input class="type-1" placeholder="Your Name"&gt;
+&lt;input class="type-2"&gt;
+// JS
+$('input.type-1').naoInput()
+$('input.type-2').naoInput({ label: 'Your Email' })
+			</code></pre>
+		</div>
+		<div class="col sml-1 mid-1 lrg-2">
+			<h3>Result</h3>
+			<input class="type-1" placeholder="Your Name">
+			<input class="type-2">
+		</div>
+	</div>
+	<div class="con row sml-1 mid-1 lrg-4">
+		<div class="col sml-1 mid-1 lrg-2">
+			<h2>Combo box input</h2>
+			<pre><code>
+// HTML
+&lt;input class="type-3" label="Your Favorite"&gt;
+// JS
+$('input.type-3').naoInput({
+  options: [
+    'Tea',
+    'Cola',
+    'Coffee'
+  ]
+})
+			</code></pre>
+		</div>
+		<div class="col sml-1 mid-1 lrg-2">
+			<h3>Result</h3>
+			<input class="type-3" label="Your Favorite">
+		</div>
+	</div>
+	<div class="con row sml-1 mid-2 lrg-4">
+		<div class="col sml-1 mid-1 lrg-2">
+			<h2>Form elements</h2>
+			<pre><code>
+// JS
+$('form').naoInput()
+			</code></pre>
+			<p>Use label attribute to define the label for an input element.</p>
+		</div>
+		<div class="col sml-1 mid-1 lrg-2">
+			<h3>Result</h3>
+			<form>
+				<input type="text" label="Your Name">
+				<input type="number" min="0" max="100" value="20" step="1" label="Age">
+				<input type="time" value="22:30:00" label="Start at">
+				<input type="date" value="2019-01-20" label="Finish before">
+				<input type="range" min="0" max="100" value="20" step="1" label="Completion">
+				<select name="" id="" label="Estimation">
+					<option value="val 1">value 1</option>
+					<option value="val 2">value 2</option>
+					<option value="val 3">value 3</option>
+					<option value="val 4">value 4</option>
+					<option value="val 5">value 5</option>
+				</select>
+				<textarea name="" id="" cols="30" rows="10" label="Message">Hello world! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque nobis expedita aliquam commodi, sit facilis blanditiis repellendus, veniam, cumque dolores quidem deleniti! Odit, sequi iusto tempora tempore optio magni rerum!</textarea>
+				<input type="file" label="Photo upload">
+				<fieldset class="nao-fieldset">
+					<legend>Radio input</legend>
+					<input type="radio" value="radio 1" name="rad" label="Radio 1">
+					<input type="radio" value="radio 2" name="rad" label="Radio 2">
+					<input type="radio" value="radio 3" name="rad" label="Radio 3">
+				</fieldset>
+				<fieldset class="nao-fieldset">
+					<legend>Checkbox input</legend>
+					<input type="checkbox" value="check 1" label="Check 1">
+					<input type="checkbox" value="check 2" label="Check 2">
+					<input type="checkbox" value="check 3" label="Check 3">
+				</fieldset>
+				<button>button tag</button>
+				<input type="button" value="button">
+				<input type="reset" value="reset">
+				<input type="submit" value="submit">
+			</form>
+		</div>
+	</div>
+	<script src="jQuery.min.js"></script>
+	<script src="jQuery-ui.min.js"></script>
+	<script src="jquery-ui-touch-punch.min.js"></script>
+	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="jQuery-pseudo-ripple.js"></script>
+	<script src="jQuery-nao-calendar.js"></script>
+	<script src="jQuery-nao-input.js"></script>
+	<script>
+	$('input.type-1').naoInput()
+	$('input.type-2').naoInput({ label: 'Your Email' })
+	$('input.type-3').naoInput({
+		options: [
+			'Tea',
+			'Cola',
+			'Coffee'
+		]
+	})
+	$('form').naoInput()
+	</script>
+</body>
+</html>
